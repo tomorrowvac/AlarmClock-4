@@ -18,6 +18,7 @@
 		E2412C3316E9EC1000090BC4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2412C3216E9EC1000090BC4 /* Default-568h@2x.png */; };
 		E2412C3616E9EC1000090BC4 /* AlarmClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2412C3516E9EC1000090BC4 /* AlarmClockViewController.m */; };
 		E2412C3916E9EC1000090BC4 /* AlarmClockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2412C3716E9EC1000090BC4 /* AlarmClockViewController.xib */; };
+		E2412C4116E9EC5B00090BC4 /* ClockView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2412C4016E9EC5B00090BC4 /* ClockView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		E2412C3416E9EC1000090BC4 /* AlarmClockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlarmClockViewController.h; sourceTree = "<group>"; };
 		E2412C3516E9EC1000090BC4 /* AlarmClockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlarmClockViewController.m; sourceTree = "<group>"; };
 		E2412C3816E9EC1000090BC4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AlarmClockViewController.xib; sourceTree = "<group>"; };
+		E2412C3F16E9EC5B00090BC4 /* ClockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockView.h; sourceTree = "<group>"; };
+		E2412C4016E9EC5B00090BC4 /* ClockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				E2412C3516E9EC1000090BC4 /* AlarmClockViewController.m */,
 				E2412C3716E9EC1000090BC4 /* AlarmClockViewController.xib */,
 				E2412C2316E9EC1000090BC4 /* Supporting Files */,
+				E2412C3F16E9EC5B00090BC4 /* ClockView.h */,
+				E2412C4016E9EC5B00090BC4 /* ClockView.m */,
 			);
 			path = AlarmClock;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				E2412C2916E9EC1000090BC4 /* main.m in Sources */,
 				E2412C2D16E9EC1000090BC4 /* AlarmClockAppDelegate.m in Sources */,
 				E2412C3616E9EC1000090BC4 /* AlarmClockViewController.m in Sources */,
+				E2412C4116E9EC5B00090BC4 /* ClockView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

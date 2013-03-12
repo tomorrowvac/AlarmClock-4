@@ -19,6 +19,11 @@
 		E2412C3616E9EC1000090BC4 /* AlarmClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2412C3516E9EC1000090BC4 /* AlarmClockViewController.m */; };
 		E2412C3916E9EC1000090BC4 /* AlarmClockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E2412C3716E9EC1000090BC4 /* AlarmClockViewController.xib */; };
 		E2412C4116E9EC5B00090BC4 /* ClockView.m in Sources */ = {isa = PBXBuildFile; fileRef = E2412C4016E9EC5B00090BC4 /* ClockView.m */; };
+		E26E407416EC8CF80088DF6C /* ClockControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E26E407316EC8CF80088DF6C /* ClockControl.m */; };
+		E26E407C16EC96320088DF6C /* UIView_AlarmClock.m in Sources */ = {isa = PBXBuildFile; fileRef = E26E407B16EC96320088DF6C /* UIView_AlarmClock.m */; };
+		E26E40DC16EE7A560088DF6C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E26E40DB16EE7A560088DF6C /* AudioToolbox.framework */; };
+		E26E40DF16EF1D2D0088DF6C /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E26E40DD16EF1D2D0088DF6C /* icon.png */; };
+		E26E40E016EF1D2D0088DF6C /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E26E40DE16EF1D2D0088DF6C /* icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,13 @@
 		E2412C3816E9EC1000090BC4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AlarmClockViewController.xib; sourceTree = "<group>"; };
 		E2412C3F16E9EC5B00090BC4 /* ClockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockView.h; sourceTree = "<group>"; };
 		E2412C4016E9EC5B00090BC4 /* ClockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockView.m; sourceTree = "<group>"; };
+		E26E407216EC8CF80088DF6C /* ClockControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClockControl.h; sourceTree = "<group>"; };
+		E26E407316EC8CF80088DF6C /* ClockControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClockControl.m; sourceTree = "<group>"; };
+		E26E407A16EC948E0088DF6C /* UIView_AlarmClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIView_AlarmClock.h; sourceTree = "<group>"; };
+		E26E407B16EC96320088DF6C /* UIView_AlarmClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIView_AlarmClock.m; sourceTree = "<group>"; };
+		E26E40DB16EE7A560088DF6C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E26E40DD16EF1D2D0088DF6C /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		E26E40DE16EF1D2D0088DF6C /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E26E40DC16EE7A560088DF6C /* AudioToolbox.framework in Frameworks */,
 				E2412C1D16E9EC1000090BC4 /* UIKit.framework in Frameworks */,
 				E2412C1F16E9EC1000090BC4 /* Foundation.framework in Frameworks */,
 				E2412C2116E9EC1000090BC4 /* CoreGraphics.framework in Frameworks */,
@@ -76,6 +89,7 @@
 		E2412C1B16E9EC1000090BC4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E26E40DB16EE7A560088DF6C /* AudioToolbox.framework */,
 				E2412C1C16E9EC1000090BC4 /* UIKit.framework */,
 				E2412C1E16E9EC1000090BC4 /* Foundation.framework */,
 				E2412C2016E9EC1000090BC4 /* CoreGraphics.framework */,
@@ -86,14 +100,18 @@
 		E2412C2216E9EC1000090BC4 /* AlarmClock */ = {
 			isa = PBXGroup;
 			children = (
+				E26E407A16EC948E0088DF6C /* UIView_AlarmClock.h */,
+				E26E407B16EC96320088DF6C /* UIView_AlarmClock.m */,
 				E2412C2B16E9EC1000090BC4 /* AlarmClockAppDelegate.h */,
 				E2412C2C16E9EC1000090BC4 /* AlarmClockAppDelegate.m */,
-				E2412C3416E9EC1000090BC4 /* AlarmClockViewController.h */,
 				E2412C3516E9EC1000090BC4 /* AlarmClockViewController.m */,
 				E2412C3716E9EC1000090BC4 /* AlarmClockViewController.xib */,
+				E2412C3416E9EC1000090BC4 /* AlarmClockViewController.h */,
 				E2412C2316E9EC1000090BC4 /* Supporting Files */,
 				E2412C3F16E9EC5B00090BC4 /* ClockView.h */,
 				E2412C4016E9EC5B00090BC4 /* ClockView.m */,
+				E26E407216EC8CF80088DF6C /* ClockControl.h */,
+				E26E407316EC8CF80088DF6C /* ClockControl.m */,
 			);
 			path = AlarmClock;
 			sourceTree = "<group>";
@@ -101,6 +119,8 @@
 		E2412C2316E9EC1000090BC4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E26E40DD16EF1D2D0088DF6C /* icon.png */,
+				E26E40DE16EF1D2D0088DF6C /* icon@2x.png */,
 				E2412C2416E9EC1000090BC4 /* AlarmClock-Info.plist */,
 				E2412C2516E9EC1000090BC4 /* InfoPlist.strings */,
 				E2412C2816E9EC1000090BC4 /* main.m */,
@@ -168,6 +188,8 @@
 				E2412C3116E9EC1000090BC4 /* Default@2x.png in Resources */,
 				E2412C3316E9EC1000090BC4 /* Default-568h@2x.png in Resources */,
 				E2412C3916E9EC1000090BC4 /* AlarmClockViewController.xib in Resources */,
+				E26E40DF16EF1D2D0088DF6C /* icon.png in Resources */,
+				E26E40E016EF1D2D0088DF6C /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +204,8 @@
 				E2412C2D16E9EC1000090BC4 /* AlarmClockAppDelegate.m in Sources */,
 				E2412C3616E9EC1000090BC4 /* AlarmClockViewController.m in Sources */,
 				E2412C4116E9EC5B00090BC4 /* ClockView.m in Sources */,
+				E26E407416EC8CF80088DF6C /* ClockControl.m in Sources */,
+				E26E407C16EC96320088DF6C /* UIView_AlarmClock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +326,7 @@
 				E2412C3E16E9EC1000090BC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

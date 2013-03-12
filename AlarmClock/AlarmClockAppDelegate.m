@@ -12,6 +12,9 @@
 
 @implementation AlarmClockAppDelegate
 
+@synthesize soundId;
+
+
 - (void)dealloc
 {
     [_window release];
@@ -56,4 +59,44 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    self.soundId = nil;
+}
+
+- (void)application:(UIApplication *)inApplication didReceiveLocalNotification:(UILocalNotification *)inNotification {
+    if(inApplication.applicationState == UIApplicationStateActive) {
+        UIAlertView *theAlert = [[UIAlertView alloc]initWithTitle:nil message:inNotification.alertBody delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [theAlert show];
+        [theAlert release];
+        [self playSound];
+    }
+}
+
+- (NSNumber *)soundId {
+    if (soundId == nil) {
+        NSURL *theURL = [[NSBundle mainBundle] URLForResource:@"ringtone" withExtension:@"caf"];
+        SystemSoundID theId;
+        if (AudioServicesCreateSystemSoundID((CFURLRef) theURL, &theId) == kAudioServicesNoError) {
+            self.soundId = [NSNumber numberWithUnsignedInt:theId];
+        }
+    }
+    return soundId;
+}
+
+
+- (void)playSound {
+    NSNumber *theId = self.soundId;
+    if (theId) {
+        AudioServicesPlaySystemSound([theId unsignedIntValue]);
+    }
+}
+
+- (void)setSoundId:(NSNumber *)inSoundId {
+    if(soundId != nil){
+        AudioServicesDisposeSystemSoundID([soundId unsignedIntValue]);
+        [soundId release];
+    }
+    soundId = [inSoundId retain];
+}
+    
 @end

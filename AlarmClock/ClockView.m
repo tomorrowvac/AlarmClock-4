@@ -7,6 +7,7 @@
 //
 
 #import "ClockView.h"
+#import "UIView_AlarmClock.h"
 
 @interface ClockView()
 
@@ -35,7 +36,6 @@
     if (self) {
         self.calendar = [NSCalendar currentCalendar];
         self.time = [NSDate date];
-        [self startAnimation];
     }
     return self;
 }
@@ -53,8 +53,11 @@
 }
 
 -(void)stopAnimation {
-    [self.timer invalidate];
-    self.timer = nil;
+    if (self.timer != nil) {
+        [self.timer invalidate];
+        self.timer = nil;
+
+    }
 }
 
 - (void)updateTime:(NSTimer *)inTimer {
@@ -62,15 +65,6 @@
     [self setNeedsDisplay];
 }
 
-- (CGPoint)midPoint {
-    CGRect theBounds = self.bounds;
-    return CGPointMake(CGRectGetMidX(theBounds), CGRectGetMidY(theBounds));
-}
-
--(CGPoint)pointWithRadius:(CGFloat)inRadius angle:(CGFloat)inAngle{
-    CGPoint theCenter = [self midPoint];
-    return CGPointMake(theCenter.x + inRadius * sin(inAngle), theCenter.y - inRadius *cos(inAngle));
-}
 - (void)drawClockHands {
     CGContextRef theContext = UIGraphicsGetCurrentContext();
     CGPoint theCenter = [self midPoint];
@@ -101,6 +95,9 @@
     CGContextMoveToPoint(theContext, theCenter.x, theCenter.y);
     CGContextAddLineToPoint(theContext, thePoint.x, thePoint.y);
     CGContextStrokePath(theContext);
+    
+    CGContextAddArc(theContext, theCenter.x, theCenter.y, 6.0, 0.0, 2 * M_PI, YES);
+    CGContextFillPath(theContext);
 }
 
 - (void)drawRect:(CGRect)rect
@@ -125,7 +122,7 @@
         if (i % 5 == 0) {
             CGFloat theInnerRadius = theRadius * (i % 15 == 0 ? 0.7 : 0.8);
             CGPoint theInnerPoint = [self pointWithRadius:theInnerRadius angle:theAngle];
-            CGPoint theOuterPoint = [self pointWithRadius:theRadius angle:theAngle];
+            CGPoint theOuterPoint = [self pointWithRadius:theRadius * 0.95 angle:theAngle];
             CGContextMoveToPoint(theContext, theInnerPoint.x, theInnerPoint.y);
             CGContextAddLineToPoint(theContext, theOuterPoint.x, theOuterPoint.y);
             CGContextStrokePath(theContext);
